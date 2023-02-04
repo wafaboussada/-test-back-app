@@ -9,7 +9,7 @@ app.use(express.json());
 app.post('/calculate_age', async (req, res) => {
     try {
         const year = req.body.year;
-        const currentYear = new Date().getFullYear();
+        const currentYear = new Date().getFullYear() + 1;
         res.status(200).json({age: Math.abs(currentYear - year)})
         } catch (err) {
         res.status(500).json(err);
